@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Madam ji ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #ffdde1, #ee9ca7);
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #fff;
+      margin-top: 20px;
+      text-shadow: 2px 2px 10px #ff4081;
+    }
+
+    .photos {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+      gap: 15px;
+    }
+
+    .photos img {
+      width: 200px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .photos img:hover {
+      transform: scale(1.1);
+    }
+
+    .gift-box {
+      font-size: 5rem;
+      cursor: pointer;
+      animation: bounce 1.5s infinite;
+      margin: 30px 0;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    .emoji {
+      position: fixed;
+      font-size: 2rem;
+      animation: fall 3s linear forwards;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #fff;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+      max-width: 90%;
+      text-align: center;
+      z-index: 10;
+    }
+
+    .popup h2 {
+      color: #ff4081;
+    }
+
+    .end-line {
+      margin-top: 40px;
+      font-size: 2rem;
+      font-weight: bold;
+      color: #fff;
+      text-shadow: 2px 2px 20px #ff4081;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ff4081; }
+      to { text-shadow: 0 0 30px #ff79a9; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Happy Birthday Madam ji 🎉</h1>
+
+  <div class="photos">
+    <img src="photo1.jpg" alt="Photo 1">
+    <img src="photo2.jpg" alt="Photo 2">
+    <img src="photo3.jpg" alt="Photo 3">
+  </div>
+
+  <div class="gift-box" onclick="openGift()">🎁</div>
+
+  <div class="popup" id="popup">
+    <h2>Mere Dil Ki Baat ❤️</h2>
+    <p>
+      Aap mere liye sirf ek dost nahi, balki meri zindagi ka wo hissa ho jo mujhe hamesha sambhalta hai.  
+      Aapki muskaan meri duniya roshan karti hai aur aapki baatein meri zindagi ka sukoon hai.  
+      Aap sirf important nahi ho, aap meri duaon ka sabse khoobsurat jawaab ho. ❤️
+    </p>
+  </div>
+
+  <div class="end-line">Happy Birthday Madam ji ❤️ Aap meri duniya ho…</div>
+
+  <audio autoplay loop>
+    <source src="khairiyat.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    function openGift() {
+      // Emoji rain
+      for (let i = 0; i < 40; i++) {
+        let emoji = document.createElement("div");
+        emoji.classList.add("emoji");
+        emoji.innerText = Math.random() > 0.5 ? "😘" : "🤗";
+        emoji.style.left = Math.random() * 100 + "vw";
+        emoji.style.top = "-2rem";
+        document.body.appendChild(emoji);
+
+        setTimeout(() => {
+          emoji.remove();
+        }, 3000);
+      }
+
+      // Show popup
+      document.getElementById("popup").style.display = "block";
+    }
+  </script>
+</body>
+</html>
